@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+
+@layer base{
+  #headerNav{
+    background-image: url('../src/assets/gpt.png');
+  }
+
+  #hero{
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../src/assets/gpt2 (1).png');
+    background-repeat: no-repeat;
+    background-size: 100% 160%;
+  }
+  #navResponsif{
+    background-image: url('../src/assets/gpt.png');
+  }
+}
