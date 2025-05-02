@@ -10,8 +10,8 @@ const About = () => {
     <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
         <div className="grid md:grid-cols-2 place-items-center gap-8">
             <section className="w-1/2">
-                <h1 className="text-green-600 text-2xl font-semibold">Our Activity</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ipsam, labore porro iusto iure laborum laudantium praesentium rem excepturi nostrum autem dolore error culpa ab distinctio odio ipsa voluptatem saepe?</p>
+                <h1 className="text-green-600 text-2xl font-semibold font-risque tracking-widest">Our Activity</h1>
+                <p className="font-fredoka text-[18px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ipsam, labore porro iusto iure laborum laudantium praesentium rem excepturi nostrum autem dolore error culpa ab distinctio odio ipsa voluptatem saepe?</p>
             </section>
             <img src={gambar} alt="" className="w-96 h-60 rounded-lg"/>
         </div>
@@ -22,8 +22,8 @@ const About = () => {
                         key={idx}
                         className="w-1/5 h-36 flex flex-col justify-center items-center"
                     >
-                        <h2 className="font-bold text-3xl text-green-800 tracking-wide">{item.value}</h2>
-                        <span className="text-neutral-600">{item.title}</span>
+                        <h2 className="font-bold text-3xl text-green-800 tracking-wide font-fredoka">{item.value}</h2>
+                        <span className="text-neutral-600 font-fredoka">{item.title}</span>
                     </div>
                 ))}
             </div>

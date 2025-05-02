@@ -28,9 +28,9 @@ const Donate = () => {
                 className="shadow-lg bg-neutral-100 flex flex-col items-center p-6"
             >
                 <div className="text-4xl">{item.icon}</div>
-                <h2 className="text-2xl font-bold text-green-600/90">{item.title}</h2>
-                <h2 className="text-2xl font-semibold text-green-600/60">{item.amount}</h2>
-                <h2 className="text-neutral-500">{item.desc}</h2>
+                <h2 className="font-risque text-2xl font-bold text-green-600/90">{item.title}</h2>
+                <h2 className="font-fredoka text-2xl font-semibold text-green-600/60">{item.amount}</h2>
+                <h2 className="text-neutral-500 font-fredoka">{item.desc}</h2>
                 <button className="shadow-md rounded-full py-2 px-4 bg-green-600/60 hover:bg-green-200">Donate</button>
             </div>
         ))}

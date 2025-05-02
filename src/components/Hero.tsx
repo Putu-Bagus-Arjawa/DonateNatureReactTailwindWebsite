@@ -1,9 +1,9 @@
 
 const Hero = () => {
   return (
-    <div id="Home" className="mt-14 z-0 flex flex-col gap-y-4 justify-center items-center">
-        <div className="flex flex-col text-center">
-          <h3 className="text-3xl text-white font-semibold tracking-widest">Save Earth, Start Today</h3>
+    <div id="Home" className="mt-14 flex flex-col gap-y-4 justify-center items-center">
+        <div className="flex flex-col text-center ">
+          <h3 className="text-3xl text-white font-semibold font-risque tracking-widest">Save Earth, Start Today</h3>
           <p className="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere, esse!</p>
         </div>
         <div className="flex gap-x-4">

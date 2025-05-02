@@ -19,16 +19,16 @@ const Programs = () => {
     ]
   return (
     <div id="Programs" className="md:h-screen h-auto flex flex-col items-center gap-y-4 mt-8">
-        <h1 className="font-bold text-green-700 text-4xl tracking-wide">Our Programs</h1>
+        <h1 className="font-bold text-green-700 text-4xl tracking-wide font-risque">Our Programs</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 p-4">
             {data.map((item, idx)=>(
                 <div key={idx} className="shadow-xl border-green-600 rounded-lg border-[1px] p-4">
                     <div className="flex justify-center">
                         <img src={item.url} alt="" className="w-4/5 h-50 object-center"/>
                     </div>
-                    <h2 className="font-semibold text-2xl text-green-700">{item.title}</h2>
-                    <p>{item.desc}</p>
-                    <a href="#" className="flex gap-x-4 justify-center items-center text-green-700">Learn More <BsArrowRight/></a>
+                    <h2 className="font-semibold text-2xl text-green-700 font-risque">{item.title}</h2>
+                    <p className="font-fredoka">{item.desc}</p>
+                    <a href="#" className="flex gap-x-4 justify-center items-center text-green-700 font-risque">Learn More <BsArrowRight/></a>
                 </div>
             ))}
         </div>

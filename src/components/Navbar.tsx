@@ -17,10 +17,10 @@ const Navbar = () => {
         className="flex justify-around items-center shadow-xl p-2 fixed w-full top-0 left-0 right-0 z-10" 
         id="headerNav"
       >
-            <h2 className="text-3xl text-green-500 text-shadow-2xs">ArjawaGreen Foundation</h2>
+            <h2 className="text-3xl text-green-500 text-shadow-2xs font-risque">Arjawa G-Foundation</h2>
             <nav className="md:flex md:gap-x-4 hidden">
                 {item.map((item, index)=>(
-                    <a href={`#${item.title}`} key={index} className="hover:text-green-500 hover:border-b-[1px] hover:border-green-500 p-2">{item.title}</a>
+                    <a href={`#${item.title}`} key={index} className="font-fredoka hover:text-green-500 hover:border-b-[1px] hover:border-green-500 p-2">{item.title}</a>
                 ))}
             </nav>
             <div 
