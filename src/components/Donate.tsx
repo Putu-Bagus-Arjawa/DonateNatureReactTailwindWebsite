@@ -21,7 +21,7 @@ const Donate = () => {
         },
     ]
   return (
-    <div className="mt-8 md:h-screen h-auto bg-green-700/40 flex justify-center items-center mb-14">
+    <div  className="mt-8 md:h-screen h-auto bg-green-700/40 flex justify-center items-center mb-14" id="Donasi">
       <div className="grid md:grid-cols-3 gap-x-8 gap-y-8 place-items-center max-w-4xl">
         {data.map((item, idx)=>(
             <div key={idx}

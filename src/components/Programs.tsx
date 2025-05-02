@@ -18,7 +18,7 @@ const Programs = () => {
         },
     ]
   return (
-    <div className="md:h-screen h-auto flex flex-col items-center gap-y-4 mt-8">
+    <div id="Programs" className="md:h-screen h-auto flex flex-col items-center gap-y-4 mt-8">
         <h1 className="font-bold text-green-700 text-4xl tracking-wide">Our Programs</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4 p-4">
             {data.map((item, idx)=>(

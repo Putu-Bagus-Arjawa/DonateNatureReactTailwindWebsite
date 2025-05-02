@@ -7,7 +7,7 @@ const About = () => {
         {title: "city", value: "12"},
     ]
   return (
-    <div className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
+    <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
         <div className="grid md:grid-cols-2 place-items-center gap-8">
             <section className="w-1/2">
                 <h1 className="text-green-600 text-2xl font-semibold">Our Activity</h1>
