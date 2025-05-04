@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { CiMenuBurger } from "react-icons/ci";
 import {  FaX } from "react-icons/fa6";
-import { AnimatePresence, motion, scale, useAnimation } from "motion/react"
+import {motion } from "motion/react"
 
 const Navbar = () => {
     const item = [
@@ -17,11 +17,14 @@ const Navbar = () => {
       <motion.header 
         className="flex justify-around items-center shadow-xl p-2 fixed w-full top-0 left-0 right-0 z-10" 
         id="headerNav"
-        initial ={{ opacity:0, y:-50 }}
-        animate ={{ opacity:1, y: 0 }}
-        transition={{ type:"spring", bounce:0.50 }}
+        initial ={{ opacity:0 }}
+        animate ={{ opacity:1}}
       >
-            <motion.div whileHover={{ scale:1.05 }}>
+            <motion.div
+              initial={{ opacity: 0, x: -125}}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 2, ease: "backOut" }}
+            >
               <h2 className="text-3xl text-green-500 text-shadow-2xs font-risque">Arjawa G-Foundation</h2>
             </motion.div>
 
