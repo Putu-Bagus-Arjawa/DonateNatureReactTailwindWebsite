@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { CiMenuBurger } from "react-icons/ci";
-import {  FaX } from "react-icons/fa6";
 import {motion } from "motion/react"
+import { RxHamburgerMenu } from "react-icons/rx";
+import { GiCrossedSwords } from "react-icons/gi";
 
 const Navbar = () => {
     const item = [
@@ -11,7 +11,6 @@ const Navbar = () => {
       {title: 'Donasi'},
     ]
     const [burger, setBurger] = useState(true);
-
   return (
     <div>
       <motion.header 
@@ -31,24 +30,60 @@ const Navbar = () => {
             <nav className="md:flex md:gap-x-4 hidden">
                 {item.map((item, index)=>(
                     <motion.a 
-                      href={`#${item.title}`} key={index} className="font-fredoka hover:text-green-500 hover:border-b-[1px] hover:border-green-500 p-2"
+                      href={`#${item.title}`} key={index} className="font-fredoka hover:text-green-500 hover:border-b-[1px] hover:border-green-500 p-2 text-[18px]"
                       whileHover={{ scale: 1.1 }}
                       whileTap ={{ scale: 0.85 }}
+                      initial={{ opacity: 0, rotate: -45, y: -100}}
+                      animate={{ 
+                        rotate: 0,
+                        opacity: 1,
+                        y: 0,
+                        transition:{
+                          delay: index * 0.5,
+                          y:{
+                            type:"spring",
+                            bounce: 0.5
+                          }
+                        }
+                      }}
                     >
                         {item.title}
                     </motion.a>
                 ))}
             </nav>
 
-            <div 
+            <motion.div
+              initial ={{ scale:1.5 }} 
+              animate ={{ scale:1 }}
+              transition={{ duration:1, ease: "easeInOut" }}
               className="text-2xl md:hidden"
               onClick={()=> setBurger(!burger)}
-            >{burger?<CiMenuBurger/>:<FaX/>}</div>
+            >{burger?<RxHamburgerMenu/>:<GiCrossedSwords />}</motion.div>
             
             {!burger &&(
               <nav id="navResponsif" className="  md:hidden flex flex-col absolute top-16 w-3/4 rounded-full text-center p-2 gap-y-2">
                 {item.map((item, index)=>(
-                  <a href={`#${item.title}`} key={index} className="hover:text-green-500 p-2">{item.title}</a>
+                  <motion.a 
+                    href={`#${item.title}`} 
+                    key={index} 
+                    className="hover:text-green-500 p-2"
+                    whileHover={{ scale: 1.1 }}
+                    whileTap ={{ scale: 0.85 }}
+                    initial={{ opacity: 0, y: -100}}
+                    animate={{ 
+                      opacity: 1, 
+                      y: 0,
+                      transition:{
+                        delay: index * 0.5,
+                        y:{
+                          type:"spring",
+                          bounce: 0.5
+                        }
+                      }
+                    }}
+                  >
+                    {item.title}
+                  </motion.a>
                 ))}
               </nav>
             )}
