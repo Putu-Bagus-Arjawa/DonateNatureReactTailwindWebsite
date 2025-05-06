@@ -12,6 +12,7 @@ const About = () => {
 
     const referensi = useRef<HTMLDivElement>(null);
     const refh = useRef<HTMLHeadingElement>(null);
+    const refimg = useRef<HTMLImageElement>(null);
     const isInView =  useInView(referensi, {once:false})
   return (
     <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
@@ -33,18 +34,28 @@ const About = () => {
                 </motion.h1>
                 <p className="font-fredoka text-[18px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ipsam, labore porro iusto iure laborum laudantium praesentium rem excepturi nostrum autem dolore error culpa ab distinctio odio ipsa voluptatem saepe?</p>
             </motion.section>
-            <img src={gambar} alt="" className="w-96 h-60 rounded-lg"/>
+            <motion.img 
+                ref={refimg}
+                src={gambar} alt="" className="w-96 h-60 rounded-lg"
+                initial ={{ opacity: 0, scale: 0, x:-50}}
+                animate = {isInView? {opacity:1, scale:1, x: 0 }:{}}
+                transition={{ duration:1, ease:"easeInOut" }}
+            />
         </div>
         <div className="bg-green-700/40 w-full md:h-1/4 h-auto shadow-lg">
             <div className="grid grid-cols-2 md:grid-cols-4 place-items-center gap-4">
                 {data.map((item, idx)=>(
-                    <div 
+                    <motion.div 
+                        ref={referensi}
                         key={idx}
                         className="w-1/5 h-36 flex flex-col justify-center items-center"
+                        initial= {{ opacity:0, scale: 0, y: 100 }}
+                        animate = {isInView?{ opacity:1, scale:1,y: 0 }: {}}
+                        transition={{ duration: 1.5, ease:"easeInOut" }}
                     >
                         <h2 className="font-bold text-3xl text-green-800 tracking-wide font-fredoka">{item.value}</h2>
                         <span className="text-neutral-600 font-fredoka">{item.title}</span>
-                    </div>
+                    </motion.div>
                 ))}
             </div>
         </div>
