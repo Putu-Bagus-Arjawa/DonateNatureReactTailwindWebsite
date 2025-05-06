@@ -1,15 +1,23 @@
+import { motion, useInView } from "motion/react";
+import { useRef } from "react";
 import { BsTiktok, BsTwitterX } from "react-icons/bs"
 import { CgInstagram } from "react-icons/cg"
 
-
-
 const Footer = () => {
+    const refer = useRef<HTMLDivElement>(null);
+    const isInView = useInView(refer, { once: false });
     const link = ["About", "Program", "Donate"]
     const followUs =[<CgInstagram/>, <BsTiktok/>, <BsTwitterX/>]
+    
 
 
   return (
-    <div className="flex flex-col py-6 px-12 gap-y-4 bg-green-900">
+    <motion.div 
+      className="flex flex-col py-6 px-12 gap-y-4 bg-green-900" 
+      ref={refer}
+      initial= {{ opacity: 0}}
+      animate = {isInView?{ opacity: 1, transition: {duration: 1, ease:"easeInOut"}}: {}}
+    >
       <div className="flex flex-col md:flex-row justify-between mb-8 gap-y-6">
         <div className="max-w-1/2">
             <h1 className="text-2xl text-white font-bold mb-4 font-risque">Arjawa G-Foundation</h1>
@@ -38,7 +46,7 @@ const Footer = () => {
       <div className=" border-t-[.5px] flex justify-center pt-6">
         <p className="text-white/50 font-fredoka">© Arjawa G-Foundation. All Right Reserved</p>
       </div>
-    </div>
+    </motion.div>
   )
 }
 
