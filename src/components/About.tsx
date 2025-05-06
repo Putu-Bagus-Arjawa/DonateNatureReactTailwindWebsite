@@ -10,21 +10,18 @@ const About = () => {
         {title: "city", value: "12"},
     ]
 
-    const referensi = useRef<HTMLDivElement>(null);
-    const refh = useRef<HTMLHeadingElement>(null);
-    const refimg = useRef<HTMLImageElement>(null);
-    const isInView =  useInView(referensi, {once:false})
+    const ref = useRef<HTMLDivElement>(null);
+    const isInView =  useInView(ref, {once:false})
   return (
     <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
         <div className="grid md:grid-cols-2 place-items-center gap-8">
             <motion.section className="w-1/2" 
-                ref={referensi}
+                ref={ref}
                 initial={{ opacity:0, scale: -0.25 }}
                 animate={isInView? { opacity:1, scale:1 }:{}}
                 transition={{ duration:1, ease: "easeInOut" }}
             >
                 <motion.h1 
-                    ref={refh}
                     className="text-green-600 text-2xl font-semibold font-risque tracking-widest"
                     initial ={{ opacity:0, x: 300 }}
                     animate = {isInView?{ opacity:1, x: 0 }: {}}
@@ -35,7 +32,6 @@ const About = () => {
                 <p className="font-fredoka text-[18px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati ipsam, labore porro iusto iure laborum laudantium praesentium rem excepturi nostrum autem dolore error culpa ab distinctio odio ipsa voluptatem saepe?</p>
             </motion.section>
             <motion.img 
-                ref={refimg}
                 src={gambar} alt="" className="w-96 h-60 rounded-lg"
                 initial ={{ opacity: 0, scale: 0, x:-50}}
                 animate = {isInView? {opacity:1, scale:1, x: 0 }:{}}
@@ -46,7 +42,6 @@ const About = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 place-items-center gap-4">
                 {data.map((item, idx)=>(
                     <motion.div 
-                        ref={referensi}
                         key={idx}
                         className="w-1/5 h-36 flex flex-col justify-center items-center"
                         initial= {{ opacity:0, scale: 0, y: 100 }}
