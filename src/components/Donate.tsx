@@ -26,11 +26,12 @@ const Donate = () => {
         },
     ]
   return (
-    <div  className="mt-8 md:h-screen h-auto bg-green-700/40 flex justify-center items-center mb-14" id="Donasi" ref={refer}>
-      <div className="grid md:grid-cols-3 gap-x-8 gap-y-8 place-items-center max-w-4xl">
+    <div  className="mt-8 md:h-screen h-auto bg-green-700/40 flex flex-col justify-center items-center mb-14 p-8" id="Donasi" ref={refer}>
+      <h3 className="text-green-700 font-risque text-3xl font-semibold mb-8">Donate Now</h3>
+      <div className="grid md:grid-cols-3 gap-x-8 gap-y-8 place-items-center max-w-xl md:max-w-5xl">
         {data.map((item, idx)=>(
             <motion.div key={idx}
-                className="shadow-lg bg-neutral-100 flex flex-col items-center p-6"
+                className="shadow-lg bg-neutral-100 flex flex-col items-center p-6 w-4/5 md:w-auto"
                 initial = {{ opacity: 0, y: -200 }}
                 animate = {isInView? "visible": "hidden"}
                 variants={{

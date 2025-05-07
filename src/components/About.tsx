@@ -13,10 +13,9 @@ const About = () => {
     const ref = useRef<HTMLDivElement>(null);
     const isInView =  useInView(ref, {once:false})
   return (
-    <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4">
+    <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4 p-8" ref={ref}>
         <div className="grid md:grid-cols-2 place-items-center gap-8">
             <motion.section className="w-1/2" 
-                ref={ref}
                 initial={{ opacity:0, scale: -0.25 }}
                 animate={isInView? { opacity:1, scale:1 }:{}}
                 transition={{ duration:1, ease: "easeInOut" }}
