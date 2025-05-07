@@ -28,6 +28,11 @@ const Programs = () => {
             desc:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis itaque eos voluptatem earum molestiae, quia dolorum. Natus minima quae illo dicta in, doloremque eum vero dolorem eius asperiores, beatae veniam!",
             url: img3 
         },
+        {
+            title: "Kompos", 
+            desc:" Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis itaque eos voluptatem earum molestiae, quia dolorum. Natus minima quae illo dicta in, doloremque eum vero dolorem eius asperiores, beatae veniam!",
+            url: img3 
+        },
     ]
     const [curIdx, setCurIdx] = useState(0)
     const [view, setView] = useState(2)
@@ -53,20 +58,13 @@ const Programs = () => {
             window.removeEventListener('resize', handleResize)
         }
     }, [])
+    const postMax = Math.max(data.length - view, 0)
     const handleNext = ()=>{
-        if(!(curIdx + view == data.length)){
-            return setCurIdx(curIdx+1)
-        }else{
-            return
-        }
+        setCurIdx(prev => (prev >= postMax? 0: prev +1))
     }
 
     const handlePrev = ()=>{
-        if(curIdx > 0){
-            return setCurIdx(curIdx -1)
-        }else{
-            return
-        }
+        setCurIdx(prev => (prev <= 0? postMax: prev -1))
     }
 
 
