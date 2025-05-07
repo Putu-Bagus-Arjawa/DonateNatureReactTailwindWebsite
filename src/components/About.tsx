@@ -13,7 +13,7 @@ const About = () => {
     const ref = useRef<HTMLDivElement>(null);
     const isInView =  useInView(ref, {once:false})
   return (
-    <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4 p-8" ref={ref}>
+    <div id="About" className="md:h-screen h-auto w-screen flex flex-col justify-center gap-4 p-8 md:p-0" ref={ref}>
         <div className="grid md:grid-cols-2 place-items-center gap-8">
             <motion.section className="w-1/2" 
                 initial={{ opacity:0, scale: -0.25 }}
