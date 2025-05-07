@@ -98,9 +98,6 @@ const Programs = () => {
             </div>
             <button  onClick={()=>handleNext()}><MdNavigateNext/></button>
         </div>
-        <div>{curIdx}</div>
-        <div>{view}</div>
-
     </div>
   )
 }
